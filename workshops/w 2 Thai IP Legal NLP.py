@@ -30,9 +30,9 @@ def balance_legal_data(X,y):
    # คลาสน้อยสุดมีกี่ตัว
    min_samples = min(counts.values())
    if min_samples > 1 :
-       sampler = SMOTE(k_neighbors=min(5, min_samples-1),random_state=42)
+       sampler = SMOTE(k_neighbors=min(5, min_samples-1),random_state=20)
    else:
-       sampler = RandomOverSampler(random_state=42)
+       sampler = RandomOverSampler(random_state=20)
    X_res , y_res = sampler.fit_resample(X,y)
 #    print(f"Balanced distribution: {Counter(y_res)}")
    return X_res , y_res
